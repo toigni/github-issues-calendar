@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  github-calendar:
+    build: .
+    ports:
+      - "10000:10000"
+    environment:
+      GITHUB_TOKEN: ${GITHUB_TOKEN}
+    volumes:
+      - ./data:/app/data
+    env_file:
+      - .env
